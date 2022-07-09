@@ -1,0 +1,25 @@
+.page-title{
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container{
+    width: 400px;
+    margin: auto;
+}
+
+.error-box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 0, 0, 0.315);
+}
+
+
+.error-msg{
+    color:red;
+    font-size: 12px;
+    font-weight: 500;
+}

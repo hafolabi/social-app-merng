@@ -1,0 +1,74 @@
+    .navbar-brand {
+    color: #df3ca6;
+  }
+  
+  .navbar-brand img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    font-size: 15px;
+  }
+  
+  .btn-primary,
+  .bg-primary {
+    background-color: #df3ca6 !important;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #df3ca6;
+    opacity: 0.9;
+  }
+
+  .btn-outline-danger{
+    border:1px solid teal;
+        --bs-btn-hover-color: teal;
+    --bs-btn-hover-bg: rgba(0, 128, 128, 0.137); 
+    --bs-btn-hover-border-color: teal;
+    --bs-btn-focus-shadow-rgb: transparent;
+    --bs-btn-active-color: teal;
+     --bs-btn-active-bg: transparent;
+     --bs-btn-active-border-color: teal;
+     padding: 0px 5px;
+     color: teal;
+     border: 1px solid teal; 
+     font-size: 12px;
+  }
+
+  .btn-outline-success{
+    padding: 0px 5px;
+     color: teal;
+     border: 1px solid teal; 
+     font-size: 12px;
+     --bs-btn-hover-color: teal;
+     --bs-btn-active-color: transparent;
+    --bs-btn-hover-bg: transparent; 
+  }
+  
+  .btn-secondary {
+    background-color: #7430f9;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #7430f9;
+    opacity: 0.9;
+  }
+  
+  .icon {
+    /* margin-right: 5px; */
+    font-size: 10px;
+  }
+
+  .link{
+    text-decoration: none;
+    color:inherit;
+  }
+
+  .borderbtn{
+    border:1px solid lightgray;
+    border-radius: 4px;
+    cursor:pointer;
+  }
+  
