@@ -9,6 +9,7 @@ import { AuthContext } from "./context/auth";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SinglePost from "./pages/SinglePost";
 
 
 const httpLink = createHttpLink({
@@ -49,6 +50,10 @@ function App() {
 
             <Route exact path="/register">
                {user ? <Home /> :  <Register />}
+            </Route>
+
+              <Route exact path="/posts/:postId"> 
+               <SinglePost />
             </Route>
           </div>
         </Router>
