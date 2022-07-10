@@ -26,7 +26,7 @@ export default function Home() {
           data.getPosts &&
           data.getPosts.map((post) => (
             <div className="col-md-3" key={post.id}>
-              <PostCard post={post} />
+              <PostCard post={post} key={post.id} />
             </div>
           ))
         )}

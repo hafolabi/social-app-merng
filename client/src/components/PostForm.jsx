@@ -2,32 +2,25 @@ import React, { useState } from "react";
 import { gql, useMutation } from "@apollo/client";
 
 export default function PostForm() {
-  const [values, setValues] = useState({
-    body: "",
-  });
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const [body, setBody] = useState('');
 
   const [createPost, { error }] = useMutation(CREATE_POST_MUTATION, {
-    variables: values,
-    update(proxy, result) {
-      const { getPosts } = proxy.readQuery({
-        query: FETCH_POSTS_QUERY,
-      });
-      proxy.writeQuery({
-        query: FETCH_POSTS_QUERY,
-        data: { getPosts: [...getPosts, result.data.createPost].reverse() },
-      });
-      values.body = "";
-    },
+    variables: {body},
+    refetchQueries: [{query: FETCH_POSTS_QUERY}]
+    // update(proxy, result) {
+    //   const { getPosts } = proxy.readQuery({
+    //     query: FETCH_POSTS_QUERY,
+    //   });
+    //   proxy.writeQuery({
+    //     query: FETCH_POSTS_QUERY,
+    //     data: { getPosts: [...getPosts, result.data.createPost]},
+    //   });
+    // },
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValues({ ...values, [e.target.name]: e.target.value });
     createPost();
+    setBody('')
   };
 
   return (
@@ -42,11 +35,11 @@ export default function PostForm() {
             name="body"
             className="form-control"
             placeholder="Hi World!"
-            onChange={handleChange}
-            value={values.body}
+            onChange={(e)=>setBody(e.target.value)}
+            value={body}
           />
           {error && (
-            <span className="error-msg">{error.graphQLErrors[0].message}</span>
+            <span className="error-msg">{error.graphQLErrors[0]?.message}</span>
           )}
         </div>
 

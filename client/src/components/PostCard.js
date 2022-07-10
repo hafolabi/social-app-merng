@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import moment from "moment";
-import { FaRegComments, FaTrash } from "react-icons/fa";
+import { FaRegComments } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 import LikeButton from "./LikeButton";
+import DeleteButton from './DeleteButton'
 
 export default function PostCard({
   post: { body, createdAt, id, username, likeCount, commentCount, likes },
@@ -15,7 +16,7 @@ export default function PostCard({
       <div className="card mb-3">
         <div className="card-body">
           <div className="d-flex justify-content-between align-item-center">
-            <Link className="link" to={`/post/${id}`}>
+            <Link className="link" to={`/posts/${id}`}>
               <h5 className="card-title">{username}</h5>
             </Link>
             <img
@@ -24,7 +25,7 @@ export default function PostCard({
               alt=""
             />
           </div>
-          <Link className="link" to={`/post/${id}`}>
+          <Link className="link" to={`/posts/${id}`}>
             <span
               style={{ color: "gray", fontSize: "12px", cursor: "pointer" }}
             >
@@ -58,16 +59,7 @@ export default function PostCard({
               </button>
             </div>
 
-            {user && user.username === username && (
-              <button
-                type="button"
-                className="btn btn-outline-danger d-flex align-items-center justify-content-center"
-                onClick={() => console.log("Delete Post")}
-                style={{ padding: "3.5px", border: "1px solid tomato" }}
-              >
-                <FaTrash style={{ color: "tomato" }} className="icon" />
-              </button>
-            )}
+            {user && user.username === username && (<DeleteButton postId={id}/>)}
           </div>
         </div>
       </div>
