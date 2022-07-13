@@ -30,8 +30,8 @@ const cache = new InMemoryCache({
     Query: {
       fields: {
         getPost: {
-          merge(existing, incoming) {
-            return incoming;
+          merge(existing, incoming, { mergeObjects }) {
+            return mergeObjects(existing, incoming);
           },
         },
         getPosts: {

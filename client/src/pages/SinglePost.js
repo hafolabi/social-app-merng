@@ -98,7 +98,7 @@ export default function SinglePost() {
                 </button>
               </div>
 
-              {user && user.username === username && (
+              {user && user?.username === username && (
                 <DeleteButton postId={id} callback={deletePostCallback} />
               )}
             </div>
@@ -114,7 +114,7 @@ export default function SinglePost() {
             <div className="card-body">
               <div className="d-flex align-items-center justify-content-between">
                 <div>
-                  <h6 className="card-title">{comment.username}</h6>
+                  <h6 className="card-title">{comment?.username}</h6>
                   <span
                     style={{
                       color: "gray",
@@ -127,7 +127,7 @@ export default function SinglePost() {
                   <div className="card-text">{comment.body}</div> 
                 </div>
 
-                {user && user.username === comment.username && (
+                {user && user?.username === comment?.username && (
                   <DeleteButton postId={id} commentId={comment.id} />
                 )}
               </div>
