@@ -18,7 +18,7 @@ export default function Home() {
         )}
       </div>
 
-      <h1 className="page-title">Recent Post</h1>
+      <h1 className="page-title mt-4">Recent Post</h1>
       <div className="row">
         {loading ? (
           <h1>Loading...</h1>

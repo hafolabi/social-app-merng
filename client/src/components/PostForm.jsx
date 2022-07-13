@@ -6,7 +6,7 @@ export default function PostForm() {
 
   const [createPost, { error }] = useMutation(CREATE_POST_MUTATION, {
     variables: {body},
-    refetchQueries: [{query: FETCH_POSTS_QUERY}]
+    refetchQueries: [{query: FETCH_POSTS_QUERY}] //this adds the newest post at the top of the latest posts
     // update(proxy, result) {
     //   const { getPosts } = proxy.readQuery({
     //     query: FETCH_POSTS_QUERY,
@@ -15,8 +15,9 @@ export default function PostForm() {
     //     query: FETCH_POSTS_QUERY,
     //     data: { getPosts: [...getPosts, result.data.createPost]},
     //   });
-    // },
+    // }, this works but adds the newest post under all posts, but sorts to first after refresh
   });
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     createPost();
