@@ -35,7 +35,6 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValues({ ...values, [e.target.name]: e.target.value });
     addUser();
   };
 

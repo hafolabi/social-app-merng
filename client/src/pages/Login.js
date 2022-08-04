@@ -31,7 +31,6 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setValues({ ...values, [e.target.name]: e.target.value });
     loginUser();
   };
 

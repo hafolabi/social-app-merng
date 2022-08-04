@@ -12,7 +12,7 @@ const server = new ApolloServer({
   resolvers,
   context: ({req}) => ({req, pubsub}),
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3001',
     credentials: true
   },
 });
